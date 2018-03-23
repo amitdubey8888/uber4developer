@@ -1,0 +1,70 @@
+{
+  "name": "Job",
+  "plural": "Jobs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "clientId":{
+      "type":"string"
+    },
+    "status":{
+      "type":"string"
+    },
+    "domain": [{
+      "type": "string"
+    }],
+    "technologies": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    },
+    "created_by":{
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "updated_by": {
+      "type": "string"
+    },
+    "job_location": {
+      "type": "geopoint"
+    },
+    "job_type":{
+      "type":"string"
+    },
+    "closing_date":{
+      "type":"date"
+    },
+    "categories": [{
+      "type": "string"
+    }]
+  },
+  "validations": [],
+  "relations": {
+    "client": {
+      "type": "belongsTo",
+      "model": "Client",
+      "foreignKey": "created_by"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

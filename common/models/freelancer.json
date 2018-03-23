@@ -1,0 +1,73 @@
+{
+  "name": "Freelancer",
+  "plural": "Freelancers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date_of_birth": {
+      "type": "date"
+    },
+    "technologies": {
+      "type": [
+        "string"
+      ]
+    },
+    "linkedin_url": {
+      "type": "string"
+    },
+    "github_url": {
+      "type": "string"
+    },
+    "resume": {
+      "type": "string"
+    },
+    "location": {
+      "type": "geopoint",
+      "required": true
+    },
+    "rating": {
+      "type": "number"
+    },
+    "experience_in_years":{
+      "type":"number"
+    },
+    "description":{
+      "type":"string"
+    }
+  },
+  "validations": [],
+  "relations": {
+      "user": {
+        "type": "belongsTo",
+        "model": "AppUser",
+        "foreignKey": "userId"
+      }
+  },
+  "acls": [
+    {
+      "accessType": "ALL",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "*"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "client",
+      "permission": "DENY",
+      "property": "find"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "find"
+    }
+  ],
+  "methods": {}
+}

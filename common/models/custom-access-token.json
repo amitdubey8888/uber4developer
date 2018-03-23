@@ -1,0 +1,15 @@
+{
+    "name": "CustomAccessToken",
+    "base": "AccessToken",
+    "relations": {
+      "user": {
+        "type": "belongsTo",
+        "idName": "id",
+        "polymorphic": {
+          "idType": "string",
+          "foreignKey": "userId",
+          "discriminator": "principalType"
+        }
+      }
+    }
+  }

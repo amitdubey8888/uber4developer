@@ -1,0 +1,44 @@
+{
+    "name": "AdminNotification",
+    "plural": "AdminNotifications",
+    "base": "PersistedModel",
+    "idInjection": true,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+      "sentBy": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "message": {
+        "type": "string"
+      },
+      "notes":{
+        "type": "string"          
+      }
+    },
+    "validations": [],
+    "relations": {
+      "client": {
+        "type": "belongsTo",
+        "model": "Client",
+        "foreignKey": "clientId"
+      },
+      "job": {
+        "type": "belongsTo",
+        "model": "Job",
+        "foreignKey": "jobId"
+      },
+      "freelancer": {
+        "type": "belongsTo",
+        "model": "Freelancer",
+        "foreignKey": "freelancerId"
+      }
+    },
+    "acls": [],
+    "methods": {}
+  }
+  

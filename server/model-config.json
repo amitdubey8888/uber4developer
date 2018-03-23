@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db_dev"
+  },
+  "AccessToken": {
+    "dataSource": "db_dev",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db_dev",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db_dev",
+    "public": true,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db_dev",
+    "public": true
+  },
+  "Freelancer": {
+    "dataSource": "db_dev",
+    "public": true
+  },
+  "Client": {
+    "dataSource": "db_dev",
+    "public": true
+  },
+  "Job": {
+    "dataSource": "db_dev",
+    "public": true
+  },
+  "AppUser": {
+    "dataSource": "db_dev",
+    "public": true
+  },
+  "Technology": {
+    "dataSource": "db_dev",
+    "public": true
+  },
+  "AdminNotification": {
+    "dataSource": "db_dev",
+    "public": true
+  }
+  
+}
